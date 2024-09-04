@@ -46,7 +46,7 @@ const Hero = () => {
         <a onClick={toggleModal} className={styles.contactBtn}>Contact Me</a>
       </div>
       <img
-        src={getImageUrl("heroImage.png")}
+        src={"./assets/heroImage.png")}
         alt="Hero Image"
         className={styles.heropic}
       />
