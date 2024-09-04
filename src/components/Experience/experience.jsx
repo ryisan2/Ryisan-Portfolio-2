@@ -1,9 +1,8 @@
-import { getImageUrl } from "../../utils";
 import styles from "./Experience.module.css";
 
 export const Experience = () => {
   return (
-    <div id= "experience" className={styles.experienceContainer}>
+    <div id="experience" className={styles.experienceContainer}>
       <div className={styles.skills}>
         <div className={styles.title}>Experience</div>
         <div className={styles.iconic}>
@@ -73,7 +72,7 @@ export const Experience = () => {
             <div className={styles.content}>
               <a href="https://frontendsimplified.com">
                 <img
-                  src={getImageUrl("FES.jpeg")}
+                  src="/assets/FES.jpeg"
                   alt="frontend image"
                   className={styles.icon2}
                 />
@@ -97,7 +96,7 @@ export const Experience = () => {
             <div className={styles.content}>
               <a href="https://suprasia.xyz">
                 <img
-                  src={getImageUrl("suprasia.png")}
+                  src="/assets/suprasia.png"
                   alt="frontend image"
                   className={styles.icon2}
                 />
@@ -122,7 +121,7 @@ export const Experience = () => {
               <a href="https//twitter.com/blusharkmedia">
                 {" "}
                 <img
-                  src={getImageUrl("Blushark.png")}
+                  src="/assets/Blushark.png"
                   alt="frontend image"
                   className={styles.icon3}
                 />
