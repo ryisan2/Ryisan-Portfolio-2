@@ -187,7 +187,7 @@ margin-bottom: 52px;
 
 }
 .modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -197,12 +197,18 @@ margin-bottom: 52px;
   border-radius: 20px;
   overflow: hidden;
   display: flex;
-  visibility: hidden;
-  z-index: -1;
-  transition: visibility 1s, z-index 1s, box-shadow 1s ease;
-  background-color: white;
-  opacity: 0;
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 1s, z-index 1s;
+  z-index: 60;
+  /* ... other existing styles ... */
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 110;
 }
 
 .modalOpen {
@@ -219,53 +225,31 @@ margin-bottom: 52px;
 }
 
 .modalHalfLeft {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #0a0a0a;
-    color: #00FFFF;
-    padding: 40px;
-    font-family: 'Orbitron', sans-serif; /* Cyberpunk-style font */
-    text-align: center;
+  width: 50%;
+  background-color: #000000;
+  color: #00FFFF;
+  padding: 40px;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.modalHalfLeft h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #FF00FF;
+.modalHalfRight {
+  width: 50%;
 }
 
-.modalHalfLeft p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.modalAbout {
-    background-color: #0a0a0a;
-    overflow: hidden;
-    transform: translateX(-110%);
-    padding: 15px;
-}
-
-.modalOpen .modalAbout {
-  transform: translateX(0%);
-}
-
-.modalExit{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 36px;
-    height: 30px;
-    width: 30px;    
-    color: white; /* Explicitly set to white */
-    cursor: pointer;
-    z-index: 110; /* Increased z-index to ensure it's above other elements */
+.modalExit {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 36px;
+  height: 30px;
+  width: 30px;    
+  color: white; /* Explicitly set to white */
+  cursor: pointer;
+  z-index: 110; /* Increased z-index to ensure it's above other elements */
 }
 
 .modalExit2{
@@ -281,14 +265,14 @@ margin-bottom: 52px;
 }
 
 .modalHalf {
-  width: 50%;
+  width: 100%;
   display: flex;
   position: relative;
   transition: all 300ms ease;
 }
 
 .modalHalfRight {
-  width: 50%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -422,6 +406,8 @@ margin-bottom: 52px;
   height: 20px;
   cursor: pointer;
   z-index: 1000; /* Ensure it's above other modal content */
+  background-image: url('/close.png');  
+  background-size: cover;
 }
 
 /* ... other styles ... */
@@ -492,8 +478,19 @@ margin-bottom: 52px;
 
 .closeBtn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 110; /* Increased z-index to ensure it's above other elements */
+  /* If using text */
+  font-size: 36px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* If using image */
+  background-image: url('/close.png');
+  background-size: cover;
 }

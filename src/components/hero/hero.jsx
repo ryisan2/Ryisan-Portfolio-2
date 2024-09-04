@@ -6,7 +6,7 @@ emailjs.init('CF0xCJR7a9lEdBomR');
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -18,16 +18,19 @@ const Hero = () => {
   };
 
   const handleSubmit = (event) => {
+    console.log("Form submission started");
     event.preventDefault();
     setIsLoading(true);
     
+    console.log("Sending email via EmailJS");
     emailjs.sendForm('service_nqzn54c', 'template_jn7jfdq', event.target, 'CF0xCJR7a9lEdBomR')
       .then(() => {
+        console.log("Email sent successfully");
         setIsLoading(false);
         setEmailSent(true);
         setIsSubmitted(true);
       }, (error) => {
-        console.log(error.text);
+        console.error("Error sending email:", error.text);
         setIsLoading(false);
         alert("An error occurred, please try again later. Please contact me directly at Ryisan@suprasia.xyz");
       });
@@ -53,8 +56,12 @@ const Hero = () => {
       <div className={styles.bottomBlur} />
       
       <div className={`${styles.modal} ${isModalOpen ? styles.modalOpen : ''}`}>
-          className={styles.closeBtn}
+        <img 
+          src="/assets/close.svg" 
+          alt="Close" 
+          className={styles.closeBtn} 
           onClick={toggleModal}
+        />
         <div className={`${styles.modalHalf} ${styles.modalHalfLeft} ${styles.modalAbout}`}>
           <div className={`${styles.information} ${styles.introTxt2}`}>
             <h3><span className={`${styles.modalTitle} ${styles.modalTitleAbout}`}>Here&apos;s A Bit About Me</span></h3>
@@ -77,7 +84,7 @@ const Hero = () => {
               <h4 className={styles.contactSub}>I&apos;m currently open to new opportunities</h4>
               
               {!emailSent ? (
-                <form id="contact__form" className={styles.contactForm} onSubmit={handleSubmit}>
+                <form className={styles.contactForm} onSubmit={handleSubmit}>
                   <div className={styles.formItem}>
                     <input className={styles.input} name="user_name" type="text" placeholder="Name" required />
                   </div>
@@ -88,9 +95,13 @@ const Hero = () => {
                     <textarea className={styles.input} name="message" placeholder="Message" required></textarea>
                   </div>
                   <div className={styles.btnDiv}>
-                    <button className={styles.contactBtn} type="submit">
-                      Send it my way!
-                    </button>
+                    {isLoading ? (
+                      <p>Sending...</p>
+                    ) : (
+                      <button className={styles.contactBtn} type="submit">
+                        Send it my way!
+                      </button>
+                    )}
                   </div>
                 </form>
               ) : (

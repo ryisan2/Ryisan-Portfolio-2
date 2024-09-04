@@ -53,6 +53,25 @@ ProjectCard.propTypes = {
   sourceLink: PropTypes.string.isRequired,
 };
 
+const GlossyImageCard = ({ image, title }) => (
+  <article className={`${styles.glowCard} ${styles.glossyCard}`} data-glow>
+    <span data-glow></span>
+    <div className={styles.glossyImageContainer}>
+      <img 
+        className={styles.glossyImage}
+        src={image}
+        alt={`${title} Project`}
+      />
+      <h3 className={styles.glossyTitle}>{title}</h3>
+    </div>
+  </article>
+);
+
+GlossyImageCard.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
 export const Projects = () => {
   usePointerGlow();
 
@@ -80,12 +99,33 @@ export const Projects = () => {
     }
   ];
 
+  const glossyProjectsData = [
+    {
+      image: "/assets/rabbots.png",
+      title: "Rabbots"
+    },
+    {
+      image: "/assets/cybors.png",
+      title: "Cybors"
+    },
+    {
+      image: "/assets/Boba.png",
+      title: "BobaBears"
+    }
+  ];
+
   return (
     <div id="projects" className={styles.projectsWrapper}>
-      <h2 className={styles.proj}>Projects</h2>
+      <h2 className={`${styles.proj} ${styles.devProj}`}>Development Projects</h2>
       <div className={styles.cardCont}>
         {projectsData.map((project, index) => (
           <ProjectCard key={index} {...project} />
+        ))}
+      </div>
+      <h2 className={`${styles.proj} ${styles.nftProj}`}>NFT Projects</h2>
+      <div className={styles.glossyCardCont}>
+        {glossyProjectsData.map((project, index) => (
+          <GlossyImageCard key={index} {...project} />
         ))}
       </div>
     </div>

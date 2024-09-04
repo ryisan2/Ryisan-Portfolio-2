@@ -41,9 +41,9 @@
 }
 
 .glowCard {
+  width: 300px;
   aspect-ratio: 3 / 4;
   border-radius: calc(var(--radius) * 1px);
-  width: 300px;
   position: relative;
   box-shadow: 0 1rem 2rem -1rem black;
   padding: 1rem;
@@ -187,4 +187,134 @@
         align-items: center;
     }
 
+}
+
+.glossyCardCont {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+.glossyCard {
+  width: 300px;
+  height: 400px;
+  /* overflow: hidden; */
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.glossyImageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.glossyImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.glossyCard:hover .glossyImage {
+  transform: scale(1.05);
+}
+
+.glossyTitle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.glossyCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 50%, rgba(255,255,255,0.3) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.glossyCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.nftProj {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #f0f0f0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+               0 0 20px rgba(255, 255, 255, 0.3),
+               0 0 30px rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.nftProj::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #f0f0f0, transparent);
+  margin: 10px auto 0;
+}
+
+.devProj,
+.nftProj {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #f0f0f0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+               0 0 20px rgba(255, 255, 255, 0.3),
+               0 0 30px rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.devProj::after,
+.nftProj::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #f0f0f0, transparent);
+  margin: 10px auto 0;
+}
+
+.devProj {
+  margin-top: 0; /* Adjust this if needed based on your layout */
 }
