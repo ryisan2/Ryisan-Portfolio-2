@@ -1,15 +1,12 @@
 import { Navbar } from "./components/navbar/navbar"
 import Hero from '/src/components/hero/hero.jsx';
 import { About } from "./components/About/About"
-<<<<<<< Updated upstream
-import { Experience } from "./components/Experience/Experience"
-=======
 import { Experience } from "./components/Experience/Experience.jsx"
->>>>>>> Stashed changes
 import { Projects } from "./components/Projects/Projects"
 import { Footer } from "./components/Footer/Footer"
 import AudioPlayer from './components/AudioPlayer/AudioPlayer.jsx';
 import styles from './App.module.css';
+import BackToTop from './components/BackToTop/BackToTop';
 
 function App() {
   return (
@@ -21,6 +18,7 @@ function App() {
       <Experience />
       <Projects />
       <Footer />
+      <BackToTop />
     </div>
   );
 }
