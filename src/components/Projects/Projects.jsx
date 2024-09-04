@@ -39,7 +39,7 @@ const ProjectCard = ({ image, title, description, technologies, sourceLink }) =>
         ))}
       </div>
       <a href={sourceLink} className={styles.sourceLink} data-glow>
-        <span><img src="/assets/Footer/github.svg" alt="github" className={styles.icon} target="_blank" rel="noopener noreferrer" /></span>
+        <span><img src="/assets/github.svg" alt="github" className={styles.icon} target="_blank" rel="noopener noreferrer" /></span>
       </a>
     </div>
   </article>
@@ -58,21 +58,21 @@ export const Projects = () => {
 
   const projectsData = [
     {
-      image: "../../../assets/project/bobaman.png",
+      image: "./assets/bobaman.png",
       title: "Boba Mandarin",
       description: "Mandarin app modeled after Duolingo",
       technologies: ["React", "MongoDB", "Stripe"],
       sourceLink: "https://boba-mandarin.vercel.app/"
     },
     {
-      image: "../../../assets/project/profileex.png",
+      image: "./assets/profileex.png",
       title: "Profile Example",
       description: "A sample profile project",
       technologies: ["HTML", "CSS", "JavaScript"],
       sourceLink: "https://github.com/ryisan2/week4-project/deployments/github-pages"
     },
     {
-      image: "../../../assets/project/ultraverse.png",
+      image: "./assets/ultraverse.png",
       title: "Ultraverse",
       description: "An immersive virtual reality experience",
       technologies: ["Unity", "C#", "VR"],

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import styles from "./Hero.module.css";
+import { useState } from 'react';
+import styles from './Hero.module.css';
 import { getImageUrl } from "../../utils.js";
 import emailjs from '@emailjs/browser';
 
@@ -7,13 +7,15 @@ emailjs.init('CF0xCJR7a9lEdBomR');
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [setIsLoading] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-const toggleModal = () => {
+  const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
     setIsLoading(false);
     setEmailSent(false);
+    setIsSubmitted(false);
   };
 
   const handleSubmit = (event) => {
@@ -24,6 +26,7 @@ const toggleModal = () => {
       .then(() => {
         setIsLoading(false);
         setEmailSent(true);
+        setIsSubmitted(true);
       }, (error) => {
         console.log(error.text);
         setIsLoading(false);
@@ -43,7 +46,7 @@ const toggleModal = () => {
         <a onClick={toggleModal} className={styles.contactBtn}>Contact Me</a>
       </div>
       <img
-        src={getImageUrl("hero/heroImage.png")}
+        src={getImageUrl("heroImage.png")}
         alt="Hero Image"
         className={styles.heropic}
       />
@@ -51,6 +54,12 @@ const toggleModal = () => {
       <div className={styles.bottomBlur} />
       
       <div className={`${styles.modal} ${isModalOpen ? styles.modalOpen : ''}`}>
+        <img
+          src={getImageUrl("close.svg")}
+          alt="Close"
+          className={styles.closeBtn}
+          onClick={toggleModal}
+        />
         <div className={`${styles.modalHalf} ${styles.modalHalfLeft} ${styles.modalAbout}`}>
           <div className={`${styles.information} ${styles.introTxt2}`}>
             <h3><span className={`${styles.modalTitle} ${styles.modalTitleAbout}`}>Here&apos;s A Bit About Me</span></h3>
@@ -66,13 +75,13 @@ const toggleModal = () => {
             {/* Add language icons here */}
           </div>
         </div>
-        <div className={`${styles.modalHalf} ${styles.modalHalfRight} ${styles.modalContact}`}>
-          <div className={styles.formContainer}>
-            <h3 className={styles.contactHeader}><span>Let&apos;s Speak Together!</span></h3>
-            <h4 className={styles.contactSub}>I&apos;m currently open to new opportunities</h4>
-            
-            {!emailSent ? (
-              <>
+        <div className={`${styles.modalHalfRight} ${isSubmitted ? styles.successBackground : ''}`}>
+          {!isSubmitted ? (
+            <div className={styles.formContainer}>
+              <h3 className={styles.contactHeader}><span>Let&apos;s Speak Together!</span></h3>
+              <h4 className={styles.contactSub}>I&apos;m currently open to new opportunities</h4>
+              
+              {!emailSent ? (
                 <form id="contact__form" className={styles.contactForm} onSubmit={handleSubmit}>
                   <div className={styles.formItem}>
                     <input className={styles.input} name="user_name" type="text" placeholder="Name" required />
@@ -89,24 +98,21 @@ const toggleModal = () => {
                     </button>
                   </div>
                 </form>
-              </>
-            ) : (
-              <div className={styles.successMessage}>
-                Thanks for the message! Looking forward to speaking to you very soon! <br /><br />😃
-              </div>
-            )}
-            {isLoading && (
-              <div className={styles.loadingOverlay}>
-                <i className="fas fa-spinner"></i>
-              </div>
-            )}
-          </div>
-          <img 
-            src={getImageUrl("hero/close.svg")} 
-            alt="Close" 
-            className={styles.modalExit} 
-            onClick={toggleModal}
-          />
+              ) : (
+                <div className={styles.successContent}>
+                  <h2>Thank you!</h2>
+                  <p>Thanks for the message! Looking forward to speaking to you very soon!</p>
+                  <div className={styles.smiley}>😃</div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className={styles.successContent}>
+              <h2>Thank you!</h2>
+              <p>Thanks for the message! Looking forward to speaking to you very soon!</p>
+              <div className={styles.smiley}>😃</div>
+            </div>
+          )}
         </div>
       </div>
     </section>

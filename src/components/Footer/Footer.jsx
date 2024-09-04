@@ -12,22 +12,22 @@ export const Footer = () => {
       <ul className={styles.socialIcon}>
         <li className={styles.socialIconItem}>
           <a className={styles.socialIconLink} href="https://www.linkedin.com/in/ryisan" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/Footer/linkedin.svg" alt="LinkedIn" />
+            <img src="/assets/linkedin.svg" alt="LinkedIn" />
           </a>
         </li>
         <li className={styles.socialIconItem}>
           <a className={styles.socialIconLink} href="https://twitter.com/ryisan" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/Footer/twitter.svg" alt="Twitter" />
+            <img src="/assets/twitter.svg" alt="Twitter" />
           </a>
         </li>
         <li className={styles.socialIconItem}>
           <a className={styles.socialIconLink} href="https://twitter.com/blusharkmedia" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/Footer/twitter.svg" alt="BluShark Media Twitter" />
+            <img src="/assets/twitter.svg" alt="BluShark Media Twitter" />
           </a>
         </li>
         <li className={styles.socialIconItem}>
           <a className={styles.socialIconLink} href="https://github.com/ryisan" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/Footer/github.svg" alt="GitHub" />
+            <img src="./assets/github.svg" alt="GitHub" />
           </a>
         </li>
       </ul>

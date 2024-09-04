@@ -7,7 +7,7 @@ export const About = () => {
       <div className={styles.headliner}>
         <h2 id="about"className={styles.title}>About</h2>
         <img
-          src={getImageUrl("about/1.svg")}
+          src={getImageUrl("1.svg")}
           alt="worker image"
           className={styles.aboutImg}
         />
@@ -15,7 +15,7 @@ export const About = () => {
       <div className={styles.moreInfo}>
         <div className={styles.content}>
           <img
-            src={getImageUrl("about/frontend.png")}
+            src={getImageUrl("frontend.png")}
             alt="frontend image"
             className={styles.icon}
           />
@@ -29,7 +29,7 @@ export const About = () => {
         </div>
         <div className={styles.content}>
           <img
-            src={getImageUrl("about/backend.png")}
+            src={getImageUrl("backend.png")}
             alt="frontend image"
             className={styles.icon}
           />
@@ -43,7 +43,7 @@ export const About = () => {
         </div>
         <div className={styles.content}>
           <img
-            src={getImageUrl("about/AI.png")}
+            src={getImageUrl("AI.png")}
             alt="frontend image"
             className={styles.icon}
           />
@@ -57,7 +57,7 @@ export const About = () => {
         </div>
         <div className={styles.content}>
           <img
-            src={getImageUrl("about/web3.png")}
+            src={getImageUrl("web3.png")}
             alt="frontend image"
             className={styles.icon}
           />
