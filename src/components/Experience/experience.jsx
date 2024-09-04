@@ -10,21 +10,21 @@ export const Experience = () => {
           <ul className={styles.icons}>
             <li className={styles.skillset}>
               <img
-                src={"../../../assets/skills/html.png"}
+                src={"/assets/skills/html.png"}
                 className={styles.icon}
               />
               <h5 className={styles.listText}>HTML</h5>
             </li>
             <li className={styles.skillset}>
               <img
-                src={"../../../assets/skills/javascript.png"}
+                src={"/assets/skills/javascript.png"}
                 className={styles.icon}
               />
               <h5 className={styles.listText}>Javascript</h5>
             </li>
             <li className={styles.skillset}>
               <img
-                src={"../../../assets/skills/typescript.png"}
+                src={"/assets/skills/typescript.png"}
                 className={styles.icon}
               />
               <h5 className={styles.listText}>Typescript</h5>
