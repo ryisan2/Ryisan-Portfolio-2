@@ -27,7 +27,7 @@ export const Footer = () => {
         </li>
         <li className={styles.socialIconItem}>
           <a className={styles.socialIconLink} href="https://github.com/ryisan" target="_blank" rel="noopener noreferrer">
-            <img src="./assets/github.svg" alt="GitHub" />
+            <img src="/assets/github.svg" alt="GitHub" />
           </a>
         </li>
       </ul>

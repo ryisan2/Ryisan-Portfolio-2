@@ -58,21 +58,21 @@ export const Projects = () => {
 
   const projectsData = [
     {
-      image: "./assets/bobaman.png",
+      image: "/assets/bobaman.png",
       title: "Boba Mandarin",
       description: "Mandarin app modeled after Duolingo",
       technologies: ["React", "MongoDB", "Stripe"],
       sourceLink: "https://boba-mandarin.vercel.app/"
     },
     {
-      image: "./assets/profileex.png",
+      image: "/assets/profileex.png",
       title: "Profile Example",
       description: "A sample profile project",
       technologies: ["HTML", "CSS", "JavaScript"],
       sourceLink: "https://github.com/ryisan2/week4-project/deployments/github-pages"
     },
     {
-      image: "./assets/ultraverse.png",
+      image: "/assets/ultraverse.png",
       title: "Ultraverse",
       description: "An immersive virtual reality experience",
       technologies: ["Unity", "C#", "VR"],

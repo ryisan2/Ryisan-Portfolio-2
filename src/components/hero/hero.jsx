@@ -46,7 +46,7 @@ const Hero = () => {
         <a onClick={toggleModal} className={styles.contactBtn}>Contact Me</a>
       </div>
       <img
-        src={getImageUrl("heroImage.png")}
+        src={getImageUrl("/assets/heroImage.png")}
         alt="Hero Image"
         className={styles.heropic}
       />
@@ -55,7 +55,7 @@ const Hero = () => {
       
       <div className={`${styles.modal} ${isModalOpen ? styles.modalOpen : ''}`}>
         <img
-          src={getImageUrl("close.svg")}
+            src={getImageUrl("/assets/close.svg")}
           alt="Close"
           className={styles.closeBtn}
           onClick={toggleModal}
