@@ -19,10 +19,10 @@ const usePointerGlow = () => {
   }, []);
 };
 
-const ProjectCard = ({ image, title, description, technologies, sourceLink }) => (
+const ProjectCard = ({ image, title, description, technologies, sourceLink, projectLink }) => (
   <article  className={styles.glowCard} data-glow>
     <span data-glow></span>
-    <a href={sourceLink} target="_blank" rel="noopener noreferrer">
+    <a href={projectLink} target="_blank" rel="noopener noreferrer">
     <img 
       className={styles.cardImg}
       src={image}
@@ -51,6 +51,7 @@ ProjectCard.propTypes = {
   description: PropTypes.string.isRequired,
   technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
   sourceLink: PropTypes.string.isRequired,
+  projectLink: PropTypes.string.isRequired,
 };
 
 const GlossyImageCard = ({ image, title }) => (
@@ -81,21 +82,24 @@ export const Projects = () => {
       title: "Boba Mandarin",
       description: "Mandarin app modeled after Duolingo",
       technologies: ["React", "MongoDB", "Stripe"],
-      sourceLink: "https://boba-mandarin.vercel.app/"
+      projectLink: "https://boba-mandarin.vercel.app/",
+      sourceLink: "https://github.com/ryisan2/boba-mandarin"
     },
     {
       image: "/assets/profileex.png",
       title: "Profile Example",
       description: "A sample profile project",
       technologies: ["HTML", "CSS", "JavaScript"],
-      sourceLink: "https://github.com/ryisan2/week4-project/deployments/github-pages"
+      projectLink: "https://ryisan2.github.io/week4-project/",
+      sourceLink: "https://github.com/ryisan2/week4-project"
     },
     {
       image: "/assets/ultraverse.png",
       title: "Ultraverse",
       description: "An immersive virtual reality experience",
       technologies: ["Unity", "C#", "VR"],
-      sourceLink: "https://ryisan-internship.vercel.app/"
+      projectLink: "https://ryisan-internship.vercel.app/",
+      sourceLink: "https://github.com/ryisan2/Ryisan-internship"
     }
   ];
 
