@@ -1,0 +1,121 @@
+.aboutContainer {
+  background-color: rgb(0, 0, 12);
+  display: flex;
+  align-items: center;
+  margin: 20px 60px;
+  height: 500px;
+  border-radius: 20px;
+}
+
+.aboutImg {
+  height: 350px;
+  width: 350px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 23px;
+  margin-left: 50px;
+  font-family: var(--font-roboto);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 0) 120%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.text {
+  color: var(--color-text-secondary);
+  margin-right: 10px;
+}
+.icon {
+  height: 40px;
+  width: 40px;
+  margin-top: 10px;
+}
+.moreInfo {
+  margin-top: 70px;
+}
+
+.content {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start off-screen to the left */
+    width: 98%;
+    height: 80%; /* Cover the entire content */
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.42) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    border-radius: 10px;
+    pointer-events: none;
+    z-index: 1; /* Ensure the gradient stays above the content but below any text/images */
+    background-size: 200% 100%; /* Make sure the gradient is large enough to move */
+  }
+  
+  .content:hover::before {
+    opacity: 1;
+    animation: slideRight 1s forwards; /* Add animation on hover */
+  }
+  
+  @keyframes slideRight {
+    0% {
+      left: -100%; /* Start position */
+    }
+    100% {
+      left: 0%; /* End position, move off-screen to the right */
+    }
+  }
+  
+
+.about {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 830px) {
+  .title {
+    margin: 150px;
+    font-size: 48px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+  }
+
+  .aboutImg {
+    height: 400px;
+    width: 400px;
+  }
+
+  .aboutContainer {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 100px;
+  }
+
+  .headliner {
+    margin-top: 10px;
+  }
+
+  .content {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+}

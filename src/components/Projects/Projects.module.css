@@ -1,0 +1,190 @@
+@import "../../vars.css";
+
+:root {
+  --backdrop: hsl(0 0% 60% / 0.12);
+  --radius: 14;
+  --border: 3;
+  --backup-border: var(--backdrop);
+  --size: 200;
+  --base: 220;
+  --spread: 200;
+}
+
+.projectsWrapper {
+  background: hsl(0 0% 4%);
+  padding: 2rem;
+  min-height: 100vh;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-top:200px; /* Adjust this value as needed */
+}
+
+.proj {
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.icon {
+  height: 30px;
+  width: 30px;
+}
+
+.icon:hover {
+  transform: scale(1.4);
+}
+
+.cardCont {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.glowCard {
+  aspect-ratio: 3 / 4;
+  border-radius: calc(var(--radius) * 1px);
+  width: 300px;
+  position: relative;
+  box-shadow: 0 1rem 2rem -1rem black;
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  border: 1px solid hsl(0 0% 100% / 0.15);
+  backdrop-filter: blur(calc(var(--cardblur, 5) * 1px));
+  -webkit-backdrop-filter: blur(calc(var(--cardblur, 5) * 1px));
+  touch-action: none;
+}
+
+.glowCard[data-glow] {
+  --border-size: calc(var(--border, 2) * 1px);
+  --spotlight-size: calc(var(--size, 150) * 1px);
+  --hue: calc(var(--base) + (var(--xp, 0) * var(--spread, 0)));
+  background-image: radial-gradient(
+    var(--spotlight-size) var(--spotlight-size) at
+    calc(var(--x, 0) * 1px)
+    calc(var(--y, 0) * 1px),
+    hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--bg-spot-opacity, 0.1)),
+    transparent
+  );
+  background-color: var(--backdrop, transparent);
+  background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  border: var(--border-size) solid var(--backup-border);
+}
+
+.glowCard[data-glow]::before,
+.glowCard[data-glow]::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: calc(var(--border-size) * -1);
+  border: var(--border-size) solid transparent;
+  border-radius: calc(var(--radius) * 1px);
+  background-attachment: fixed;
+  background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  mask:
+    linear-gradient(transparent, transparent),
+    linear-gradient(white, white);
+  -webkit-mask-clip: padding-box, border-box;
+  mask-clip: padding-box, border-box;
+  -webkit-mask-clip: padding-box, border-box;
+  mask-composite: intersect;
+}
+
+.glowCard[data-glow]::before {
+  background-image: radial-gradient(
+    calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
+    calc(var(--x, 0) * 1px)
+    calc(var(--y, 0) * 1px),
+    hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 50) * 1%) / var(--border-spot-opacity, 1)),
+    transparent 100%
+  );
+  filter: brightness(2);
+}
+
+.glowCard[data-glow]::after {
+  background-image: radial-gradient(
+    calc(var(--spotlight-size) * 0.5) calc(var(--spotlight-size) * 0.5) at
+    calc(var(--x, 0) * 1px)
+    calc(var(--y, 0) * 1px),
+    hsl(0 100% 100% / var(--border-light-opacity, 1)),
+    transparent 100%
+  );
+}
+
+.cardImg {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: calc(var(--radius) * 1px);
+  border-top-right-radius: calc(var(--radius) * 1px);
+}
+
+.cardContent {
+  color: white;
+}
+
+.cardContent h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cardContent p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.techList span {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.sourceLink {
+  display: inline-block;
+  color: hsl(0 0% 80%);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  align-self: end;
+}
+
+.sourceLink[data-glow] span {
+  font-weight: bold;
+  background-image: radial-gradient(
+    var(--spotlight-size) var(--spotlight-size) at
+    calc(var(--x, 0) * 1px)
+    calc(var(--y, 0) * 1px),
+    hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--bg-spot-opacity, 1)),
+    transparent
+  );
+  background-color: var(--backdrop, transparent);
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: brightness(1.5);
+  color: transparent;
+}
+
+@media screen and (max-width: 830px){
+
+    .projects {
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}

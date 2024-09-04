@@ -1,0 +1,17 @@
+:root {
+    /*Colors*/
+
+    --color-text: #ffffff;
+    --color-primary: #576cbc;
+    --color-secondary: #19376d;
+    --color-dark: #0b2447;
+    --color-bg: #0a0a0a;
+
+    /* Fonts */
+--font-roboto:"Roboto"
+
+/*Cards*/
+--card-height:100px;
+--card-width: 320px;
+
+}
