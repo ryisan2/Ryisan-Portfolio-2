@@ -54,9 +54,6 @@ const Hero = () => {
       <div className={styles.bottomBlur} />
       
       <div className={`${styles.modal} ${isModalOpen ? styles.modalOpen : ''}`}>
-        <img
-        src="/assets/heroImage.png"
-        alt="Hero Image" alt="Close"
           className={styles.closeBtn}
           onClick={toggleModal}
         />
