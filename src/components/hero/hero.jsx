@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styles from './Hero.module.css';
-import { getImageUrl } from "../../utils.js";
 import emailjs from '@emailjs/browser';
 
 emailjs.init('CF0xCJR7a9lEdBomR');
@@ -56,7 +55,6 @@ const Hero = () => {
       <div className={`${styles.modal} ${isModalOpen ? styles.modalOpen : ''}`}>
           className={styles.closeBtn}
           onClick={toggleModal}
-        />
         <div className={`${styles.modalHalf} ${styles.modalHalfLeft} ${styles.modalAbout}`}>
           <div className={`${styles.information} ${styles.introTxt2}`}>
             <h3><span className={`${styles.modalTitle} ${styles.modalTitleAbout}`}>Here&apos;s A Bit About Me</span></h3>
