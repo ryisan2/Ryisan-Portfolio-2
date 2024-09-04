@@ -30,7 +30,7 @@ const AudioPlayer = () => {
         {isPlaying ? 'Pause Music' : 'Play Music'}
       </button>
       <audio ref={audioRef} loop autoPlay>
-        <source src="./assets/Ryisan The Champyun-LV or Prada Limited.mp3" type="audio/mpeg" />
+        <source src="../assets/Ryisan The Champyun-LV or Prada Limited.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
     </div>
