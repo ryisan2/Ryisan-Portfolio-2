@@ -7,7 +7,6 @@ import { Footer } from "./components/Footer/Footer"
 import AudioPlayer from './components/AudioPlayer/AudioPlayer.jsx';
 import styles from './App.module.css';
 import BackToTop from './components/BackToTop/BackToTop';
-import { Experience } from './components/Experience/experience';
 
 function App() {
   return (
