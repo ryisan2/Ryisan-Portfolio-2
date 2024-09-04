@@ -9,56 +9,56 @@ export const Experience = () => {
           <ul className={styles.icons}>
             <li className={styles.skillset}>
               <img
-                src={"/assets/skills/html.png"}
+                src={"/assets/html.png"}
                 className={styles.icon}
               />
               <h5 className={styles.listText}>HTML</h5>
             </li>
             <li className={styles.skillset}>
               <img
-                src={"/assets/skills/javascript.png"}
+                src={"/assets/javascript.png"}
                 className={styles.icon}
               />
               <h5 className={styles.listText}>Javascript</h5>
             </li>
             <li className={styles.skillset}>
               <img
-                src={"/assets/skills/typescript.png"}
+                src={"/assets/typescript.png"}
                 className={styles.icon}
               />
               <h5 className={styles.listText}>Typescript</h5>
             </li>
             <li className={styles.skillset}>
               <img
-                src={"/assets/skills/react.png"}
+                src={"/assets/react.png"}
                 className={styles.icon}
               />
               <h5 className={styles.listText}>React</h5>
             </li>
             <li className={styles.skillset}>
               <img
-                src={"/assets/skills/nodejs.png"}
+                src={"/assets/nodejs.png"}
                 className={styles.icon}
               />
               <h5 className={styles.listText}>Node.js</h5>
             </li>
             <li className={styles.skillset}>
               <img
-                src={"/assets/skills/mongodb.png"}
+                src={"/assets/mongodb.png"}
                 className={styles.icon}
               />
               <h5 className={styles.listText}>MongoDB</h5>
             </li>
             <li className={styles.skillset}>
               <img
-                src={"/assets/skills/figma.png"}
+                src={"/assets/figma.png"}
                 className={styles.icon}
               />
               <h5 className={styles.listText}>Figma</h5>
             </li>
             <li className={styles.skillset}>
               <img
-                src={"/assets/skills/tailwinds.png"}
+                src={"/assets/tailwinds.png"}
                 className={styles.icon}
               />
               <h5 className={styles.listText}>TailwindsCSS</h5>
