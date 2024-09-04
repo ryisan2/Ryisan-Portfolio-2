@@ -1,13 +1,12 @@
-import { getImageUrl } from "../../utils";
 import styles from "./About.module.css";
 
 export const About = () => {
   return (
     <div className={styles.aboutContainer}>
       <div className={styles.headliner}>
-        <h2 id="about"className={styles.title}>About</h2>
+        <h2 id="about" className={styles.title}>About</h2>
         <img
-          src={getImageUrl("1.svg")}
+          src="/assets/1.svg"
           alt="worker image"
           className={styles.aboutImg}
         />
@@ -15,7 +14,7 @@ export const About = () => {
       <div className={styles.moreInfo}>
         <div className={styles.content}>
           <img
-            src={getImageUrl("frontend.png")}
+            src="/assets/frontend.png"
             alt="frontend image"
             className={styles.icon}
           />
@@ -29,8 +28,8 @@ export const About = () => {
         </div>
         <div className={styles.content}>
           <img
-            src={getImageUrl("backend.png")}
-            alt="frontend image"
+            src="/assets/backend.png"
+            alt="backend image"
             className={styles.icon}
           />
           <div className={styles.about}>
@@ -43,8 +42,8 @@ export const About = () => {
         </div>
         <div className={styles.content}>
           <img
-            src={getImageUrl("AI.png")}
-            alt="frontend image"
+            src="/assets/AI.png"
+            alt="AI image"
             className={styles.icon}
           />
           <div className={styles.about}>
@@ -57,14 +56,14 @@ export const About = () => {
         </div>
         <div className={styles.content}>
           <img
-            src={getImageUrl("web3.png")}
-            alt="frontend image"
+            src="/assets/web3.png"
+            alt="web3 image"
             className={styles.icon}
           />
           <div className={styles.about}>
             <h3 className={styles.text}>Web3 Consultant</h3>
             <p className={styles.text}>
-            10 years of experience as a consultant in cryptocurrency and Web3 products, with expertise in content creation, consultation, project management, customer success, community management, and implementation.
+              10 years of experience as a consultant in cryptocurrency and Web3 products, with expertise in content creation, consultation, project management, customer success, community management, and implementation.
             </p>
           </div>
         </div>
