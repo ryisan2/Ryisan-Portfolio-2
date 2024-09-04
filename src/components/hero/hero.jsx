@@ -46,6 +46,7 @@ const Hero = () => {
           learn more!
         </p>
         <a onClick={toggleModal} className={styles.contactBtn}>Contact Me</a>
+        <a href="https://suprasia.xyz" target="_blank" rel="noopener noreferrer" className={styles.contactBtn}>My Business</a>
       </div>
       <img
         src="/assets/heroImage.png"
