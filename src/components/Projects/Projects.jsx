@@ -83,7 +83,7 @@ export const Projects = () => {
       description: "Mandarin app modeled after Duolingo",
       technologies: ["React", "MongoDB", "Stripe"],
       projectLink: "https://boba-mandarin.vercel.app/",
-      sourceLink: "https://github.com/ryisan2/boba-mandarin"
+      sourceLink: "https://github.com/ryisan2/BobaMandarin"
     },
     {
       image: "/assets/profileex.png",

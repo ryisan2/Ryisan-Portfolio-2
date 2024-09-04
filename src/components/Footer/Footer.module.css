@@ -1,9 +1,9 @@
 .footer {
   position: relative;
   width: 100%;
-  background: #031632;
+  background: #022c40;
   min-height: 100px;
-  padding: 20px 50px;
+  padding: 20px 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,16 +46,16 @@
   font-size: 1rem;
   font-weight: 300;
 }
-
+/* 
 .wave {
   position: absolute;
   top: -100px;
   left: 0;
-  width: 100%;
-  height: 100px;
-  background: url("https://i.ibb.co/wQZVxxk/wave.png");
+  width: 600%;
+  height: 400px;
+  background: url("/assets/wave.png");
   background-size: 1000px 100px;
-}
+} */
 
 .wave1 {
   z-index: 1000;
