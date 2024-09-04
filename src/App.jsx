@@ -1,6 +1,7 @@
 import { Navbar } from "./components/navbar/navbar"
 import Hero from '/src/components/hero/hero.jsx';
 import { About } from "./components/About/About"
+import { Experience } from "./components/experience/Experience"
 import { Projects } from "./components/Projects/Projects"
 import { Footer } from "./components/Footer/Footer"
 import AudioPlayer from './components/AudioPlayer/AudioPlayer.jsx';
