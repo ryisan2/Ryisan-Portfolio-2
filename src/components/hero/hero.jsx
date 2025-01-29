@@ -41,7 +41,11 @@ const Hero = () => {
       <div className={styles.content}>
         <h1 className={styles.title}>Hi, I am <span className={styles.ryisan}>Ryisan</span></h1>
         <p className={styles.description}>
-          I am a full stack developer with 2 years of experience using React,
+          Greetings My name is Ryisan and I am a true believer in the blockchain and web3. I have extensive
+          experience with web3 game creation, token creation, NFT creation and marketing,project management,and
+          content direction.
+          
+          I am also a full stack developer with 2 years of experience using React,
           Node, Javascript, Typescript, AI, and Backend tools. Reach out if you want to
           learn more!
         </p>
